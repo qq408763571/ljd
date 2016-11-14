@@ -1,0 +1,320 @@
+body,html{
+    margin:0;
+    height: 100%;
+}
+body{
+    min-width: 1440px;
+    display: block;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style-type:none;
+    list-style-image: none;
+}
+a{
+    text-decoration: none;
+    color: #999;
+}
+#page{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+/*logo*/
+.logo{
+    width: 152px;
+    height: 13px;
+    position: fixed;
+    top: 30px;
+    right: 42px;
+    z-index: 99;
+}
+#right-kb{
+    right: 0px;
+    width: 33px;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+}
+/*nav*/
+.navBox{
+    width: 240px;
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    right: 0px;
+    z-index: 98;
+}
+/*nav样式*/
+.expmenu{
+    width: 240px;
+    padding:92px 0px 0px;
+    margin:0px;
+    overflow: hidden;
+}
+.expmenu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.expmenu li{
+    width: 80px;
+    height: 10px;
+    float: left;
+    margin: 0px 0px 0px 72px;
+    padding: 0px 0px 15px 0px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial;
+    overflow: hidden;
+}
+.expmenu a{
+    width: 100px;
+    float: left;
+    overflow: hidden;
+}
+.expmenu span{
+    display: block;
+    margin-top:-15px;
+}
+.expmenu a:hover{
+    padding-top:18px;
+}
+/*中英文*/
+.m-down{
+    width:168px;
+    height: 64px;
+    float: left;
+    padding: 80px 0px 0px 75px;
+}
+.m-down li{
+    padding: 0px 0px 10px 0px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial;
+
+}
+/*主要内容*/
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+/*店铺*/
+#store{
+    width: 1064px;
+    height: 516px;
+    position: absolute;
+    top: 50%;
+    margin-top: -258px;
+    right: 290px;
+}
+/*店铺left*/
+.store-left{
+    float: left;
+    width: 282px;
+    height: 475px;
+    position: relative;
+}
+/*上半部*/
+#s-top{
+    width: 280px;
+    height: 46px;
+    position: relative;
+}
+/*省份城市*/
+.list{
+    width: 280px;
+    height: 46px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.list span{
+    line-height: 31px;
+    color: #000;
+    font-size: 10px;
+}
+#s-list{
+    margin-bottom: 20px;
+    float: right;
+    width: 240px;
+    z-index: 50;
+    position: relative;
+    top: 0px;
+
+}
+#s-list span{
+    height: 28px;
+    background: #d2d1d1;
+    border: 1px solid #959595;
+    line-height: 28px;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    width: 235px;
+    position: relative;
+    padding-left: 5px;
+}
+#s-list p{
+    width: 36px;
+    border-left: 1px solid #959595;
+    height: 28px;
+    float: right;
+    text-align: center;
+}
+#s-list div{
+    overflow-x:hidden;
+    overflow-y: auto;
+    width: 240px;
+    left: 0px;
+
+}
+#s-list li{
+    border-top: none;
+    height: 28px;
+    background: #fff;
+    padding-left: 5px;
+    line-height: 28px;
+    color: #959595;
+    cursor: pointer;
+    width: 100%;
+    font-size: 11px;
+}
+/*选择栏*/
+#s-slist{
+    margin-bottom: 12px;
+    z-index: 5;
+    float: right;
+    width: 240px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+#s-slist span{
+    height: 27px;
+    background: #d2d1d1;
+    border: 1px solid #959595;
+    line-height: 28px;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    width: 235px;
+    position: relative;
+    padding-left: 5px;
+}
+#s-slist p{
+    width: 36px;
+    border-left: 1px solid #959595;
+    height: 28px;
+    float: right;
+    text-align: center;
+}
+#s-slist div{
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 28px;
+    left: 0px;
+}
+#s-slist li{
+    border-top: none;
+    height: 28px;
+    background: #ffffff;
+    padding-left: 5px;
+    line-height: 28px;
+    color: #959595;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0;
+    font-size: 11px;
+}
+/*下半部*/
+.s-bottom{
+    width: 85%;
+    height: 54%;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    color: #959595;
+    z-index: 1;
+    border-top: 1px solid #d2d1d1;
+    padding-top: 20px;
+}
+/*分布显示*/
+.store-b{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    line-height: 20px;
+    font-size: 12px;
+}
+.store-b ul{
+    display: block;
+}
+.store-b ul li{
+    margin-bottom: 10px;
+    width: 85%;
+}
+/*店铺right*/
+.store-right{
+    float: right;
+}
+/*店铺图片*/
+.spBox{
+    width: 666px;
+    height: 455px;
+    position: relative;
+    margin: 0px auto;
+}
+.spBox .bd{
+    position: relative;
+    height: 435px;
+    z-index: 1;
+    width: 748px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.spBox .bd ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    zoom: 1;
+
+}
+.spBox .bd ul li{
+    float: left;
+}
+.spBox .bd ul li.first{
+    display: block;
+}
+/*按钮*/
+.spBox .hd{
+    position: absolute;
+    height: 8px;
+    width: 666px;
+    right: 0px;
+    bottom: 0px;
+
+}
+.spBox .hd span{
+    float: right;
+    margin-top: 10px;
+    zoom: 1;
+    width: 8px;
+    height: 8px;
+    overflow: hidden;
+    margin-right: 5px;
+    text-indent: -999px;
+    cursor: pointer;
+    background: url("../images/sdd.png")no-repeat;
+}
+.spBox .hd span.cur{
+    background: url("../images/sdd1.png")no-repeat;
+}

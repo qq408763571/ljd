@@ -1,0 +1,257 @@
+body,html{
+    margin:0;
+    height: 100%;
+}
+body{
+    min-width: 1440px;
+    display: block;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style-type:none;
+    list-style-image: none;
+}
+a{
+    text-decoration: none;
+    color: #999;
+}
+#page{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+/*logo*/
+.logo{
+    width: 152px;
+    height: 13px;
+    position: fixed;
+    top: 30px;
+    right: 42px;
+    z-index: 99;
+}
+#right-kb{
+    right: 0px;
+    width: 33px;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+}
+/*right-nav*/
+.navBox{
+    width: 240px;
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    right: 0px;
+    z-index: 98;
+}
+/*nav*/
+.expmenu{
+    width: 240px;
+    padding:92px 0px 0px;
+    margin:0px;
+    overflow: hidden;
+}
+.expmenu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.expmenu li{
+    width: 80px;
+    height: 10px;
+    float: left;
+    margin: 0px 0px 0px 72px;
+    padding: 0px 0px 15px 0px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial;
+    overflow: hidden;
+}
+.expmenu a{
+    width: 100px;
+    float: left;
+    overflow: hidden;
+}
+.expmenu span{
+    display: block;
+    margin-top:-15px;
+}
+.expmenu a:hover{
+    padding-top:18px;
+}
+/*中英文*/
+.m-down{
+    width:168px;
+    height: 64px;
+    float: left;
+    padding: 80px 0px 0px 75px;
+}
+.m-down li{
+    padding: 0px 0px 10px 0px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial;
+
+}
+/*主要内容*/
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+/*内容*/
+#content{
+    width:1110px;
+    height: 100%;
+    position: absolute;
+    right: 300px;
+}
+/*内容左边标志*/
+.content-left{
+    float: left;
+    text-align: center;
+    height: 55px;
+    width: 150px;
+    background: none repeat scroll 0% 0% #000000;
+    margin-top:24%;
+}
+.content-left p{
+    font-size:18px;
+    font-family: Arial;
+    background: none repeat scroll 0% 0% #ffffff;
+    line-height: 22px;
+    margin-top: 15px;
+}
+/*内容right*/
+.content-right{
+    float: right;
+    height: 100%;
+}
+.newsBox{
+    height: 100%;
+    width:940px;
+}
+/*新闻*/
+.newsBox .bd{
+    position:relative;
+    z-index: 1;
+    height: 100%;
+}
+.newsBox .bd li{
+    width: 229px;
+    height: 798px;
+    float: left;
+    border-left: 1px solid #D2D2D2;
+    padding: 0px 35px;
+    position:relative;
+}
+.bd{
+    width:940px;
+    height: 798px;
+
+}
+
+.bd ul{
+    display: block;
+    position: absolute;
+    top: 0px;
+
+
+}
+/*新闻盒子*/
+.newslist{
+    position:absolute;
+    top: 22%;
+    width: 229px;
+}
+/*新闻左边小圆*/
+.iqq{
+    position: absolute;
+    top: 70px;
+    left: -41px;
+}
+/*标题1*/
+.newslist h1{
+    margin-bottom: 20px;
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    font-weight: normal;
+}
+.newslist h1 .htxt{
+    float: left;
+    font-size: 48px;
+    font-family: Arial;
+    line-height: 40px;
+    color: #000;
+    margin-right: 3px;
+}
+.newslist h1 .sh1{
+    float: left;
+}
+/*标题2*/
+.newslist h2{
+    font-size: 12px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-family: Arial;
+}
+/*新闻内容*/
+.newslist h3{
+    color:#8D8D8D;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-family: Arial;
+}
+p{
+    margin-bottom: 5px;
+    font-weight: normal;
+    line-height: 30px;
+    font-size: 14px;
+    color: #666;
+}
+p img{
+    width: 229px;
+    height: 271px;
+}
+/*上下按钮*/
+.newsBox .hd{
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    right: 10px;
+    top: 22%;
+    display: block;
+}
+/*上按钮*/
+.v-top{
+    position:absolute;
+    width: 34px;
+    height: 34px;
+    background: url("../images/ibtn2.png")no-repeat;
+    top: -30px;
+    overflow: hidden;
+}
+.v-top:hover{
+    background: url("../images/ibtn3.png")no-repeat;
+}
+/*下按钮*/
+.v-bottom{
+    position:absolute;
+    width: 34px;
+    height: 34px;
+    background: url("../images/ibtn.png")no-repeat;
+    bottom: -30px;
+    overflow: hidden;
+}
+.v-bottom:hover{
+    background: url("../images/ibtn1.png")no-repeat;
+}

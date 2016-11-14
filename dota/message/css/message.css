@@ -1,0 +1,233 @@
+body,html{
+    margin:0;
+    height: 100%;
+}
+body{
+    min-width: 1440px;
+    display: block;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style-type:none;
+    list-style-image: none;
+}
+a{
+    text-decoration: none;
+    color: #999;
+}
+#page{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+/*logo*/
+.logo{
+    width: 152px;
+    height: 13px;
+    position: fixed;
+    top: 30px;
+    right: 42px;
+    z-index: 99;
+}
+#right-kb{
+    right: 0px;
+    width: 33px;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+}
+/*right-nav*/
+.navBox{
+    width: 240px;
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    right: 0px;
+    z-index: 98;
+}
+/*nav样式*/
+.expmenu{
+    width: 240px;
+    padding:92px 0px 0px;
+    margin:0px;
+    overflow: hidden;
+}
+.expmenu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.expmenu li{
+    width: 80px;
+    height: 10px;
+    float: left;
+    margin: 0px 0px 0px 72px;
+    padding: 0px 0px 15px 0px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial;
+    overflow: hidden;
+}
+.expmenu a{
+    width: 100px;
+    float: left;
+    overflow: hidden;
+}
+.expmenu span{
+    display: block;
+    margin-top:-15px;
+}
+.expmenu a:hover{
+    padding-top:18px;
+}
+/*中英文*/
+.m-down{
+    width:168px;
+    height: 64px;
+    float: left;
+    padding: 80px 0px 0px 75px;
+}
+.m-down li{
+    padding: 0px 0px 10px 0px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: Arial;
+
+}
+/*主要内容*/
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+/*留言盒*/
+.conBox{
+    width: 1078px;
+    height: 553px;
+    position: absolute;
+    top: 50%;
+    margin-top:-266.5px;
+    right: 290px;
+}
+.b-bg{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    width: 1078px;
+    height: 533px;
+}
+img{
+    border: 0px;
+    display: block;
+}
+/*留言盒内容*/
+.conMain{
+    position: relative;
+    z-index: 5;
+    width: 590px;
+    font-family: "宋体";
+    margin:0 auto;
+}
+.form-top{
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.conMain form{
+    width: 590px;
+    clear: both;
+    font-size: 12px;
+}
+.conMain label{
+    display: block;
+    width:250px;
+    margin: 0 0 15px 0;
+    height: 25px;
+}
+.conMain label span{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    float: left;
+    width: 50px;
+    height: 25px;
+    color: #959595;
+    line-height: 25px;
+}
+.conMain input{
+    width: 198px;
+    height: 25px;
+    line-height: 24px;
+    padding: 0;
+    text-indent: 6px;
+    float: left;
+    font-size: 14px;
+    background: #d2d1d1;
+    border: 1px solid #919191;
+    outline: none;
+    -webkit-transition: 1s;
+}
+.ffbox{
+    overflow: hidden;
+    width: 590px;
+}
+.ffb1{
+    float: left;
+}
+.ffb2{
+    float: right;
+}
+.form-bottom{
+    overflow: hidden;
+}
+.conMain textarea{
+    outline: none;
+    background: #ffffff;
+    border: 1px solid #919191;
+    -webkit-transition: 1s;
+    width: 572px;
+    text-align: left;
+    display: block;
+    height: 320px;
+    padding: 5px 8px;
+    font-size: 14px;
+    float: left;
+}
+/*按钮*/
+.cbtn{
+    overflow: hidden;
+    width:350px;
+    margin-top: 25px;
+}
+.sb1{
+    width: 155px;
+    height: 23px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    background:url("../images/cbtn2.png")no-repeat ;
+    float: left;
+}
+.sb1 a{
+    color: #959595;
+}
+.sb2{
+    width: 155px;
+    height: 23px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    background: url("../images/cbtn2.png")no-repeat;
+    float: right;
+}
+.sb2 a{
+    color: #959595;
+}
+.sb1:hover,.sb2:hover{
+    background: url("../images/cbtn1.png")no-repeat;cursor: pointer;color: #dcdcdc;
+}

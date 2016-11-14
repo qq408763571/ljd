@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>官方主页</title>
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+        /*主页动画*/
+       $(document).ready(function(){
+       	$("#box").hide().fadeIn(2000);
+       	$("#boxPage img:eq(0)").fadeIn(1000);
+       	var count = $("#boxPage img").length;
+       	var nValue = 0;
+       	var oValue = 0;
+
+       	var setIntervalImg = setInterval(function(){
+       		nValue++;
+       		if(nValue == count){
+       			nValue = 0;
+       		}
+       		$("#boxPage img:eq(" + (nValue) + ")").fadeIn(1000);
+       		$("#boxPage img:eq(" + (oValue) + ")").fadeOut(1000);
+       		oValue = nValue % count;
+       	},5000);
+       })
+	</script>
+</head>
+<body>
+<div id="box">
+    <!--背景动画-->
+	<div id="boxPage">
+		<img src="images/1.jpg" class="bg" style="display:block">
+		<img src="images/2.jpg" class="bg"
+		style="display:none">
+		<img src="images/3.jpg" class="bg"
+		style="display:none">
+	</div>
+</div>
+<div id="page">
+    <!--导航-->
+	<div class="nav">
+		<div class="indexNav">
+			<p><img src="images/logo1.png" class="logo"></p>
+			<h1>
+                <a href="http://localhost:8080/ajaxtest02/dota/home/home.html">EN</a> |
+                <a href="http://localhost:8080/ajaxtest02/dota/home/home.html">中文</a>
+            </h1>
+		</div>
+	</div>
+</div>	
+</body>
+</html>

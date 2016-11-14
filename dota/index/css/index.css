@@ -1,0 +1,88 @@
+html,body{
+	margin: 0;
+	height: 100%;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+body{
+	display: block;
+	padding: 0;
+}
+a{
+text-decoration:none;
+}
+#box{
+	position:fixed;
+	display: block;
+}
+/*背景动画*/
+#boxPage{
+	width:100%;
+	min-height: 100%;
+	height: auto;
+	top: 0px;
+}
+img.bg{
+	width: 1600px;
+	margin-left: 0px;
+	height: 900px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+}
+#page{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/*导航*/
+.nav{
+	position:fixed;
+	width:396px;
+	height:396px;
+	top: 50%;
+	left:50%;
+	margin-top: -198px;
+	margin-left: -198px;
+	background: url(../images/inqqw.png)no-repeat;
+}
+.nav:hover{
+	background: url(../images/inqq.png)no-repeat;
+}
+.indexNav{
+	width:250px;
+	height:76px;
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -18px;
+	margin-left: -125px;
+}
+.indexNav p{
+	text-align: center;
+	height:40px;
+}
+img .logo{
+    width: 268px;
+    height: 22px;
+}
+.indexNav h1{
+	font-size: 12px;
+	text-align: center;
+	line-height: 24px;
+	color: #5a5a5a;
+	font-family: Arial;
+}
+.indexNav h1 a{
+	font-size: 12px;
+	text-align: center;
+	line-height: 24px;
+	color: #5a5a5a;
+}
+.indexNav h1 a:hover{
+	text-decoration:underline;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/shop.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.easie.js"></script>
+    <script>
+        $(function () {
+            /*省份菜单*/
+            $("#s-list,#s-list ul").mouseover(function () {
+                $("#s-list ul").stop().slideDown(300);
+            })
+            $("#s-list,#s-list ul").mouseout(function () {
+                $("#s-list ul").stop().slideUp(300);
+            })
+            $("#s-list ul li").mouseover(function () {
+                $(this).css("background","gray");
+            })
+            $("#s-list ul li").mouseout(function () {
+                $(this).css("background","#fff");
+            })
+            $("#s-list ul li").click(function () {
+                $("#s-list").html($(this).html());
+            })
+
+            /*城市菜单*/
+            $("#s-slist,#s-slist ul").mouseover(function () {
+                $("#s-slist ul").stop().slideDown(300);
+            })
+            $("#s-slist,#list").mouseout(function () {
+                $("#s-slist ul").stop().slideUp(300);
+            })
+            $("#s-slist ul li").mouseover(function () {
+                $(this).css("background","gray");
+            })
+            $("#s-slist ul li").mouseout(function () {
+                $(this).css("background","#fff");
+            })
+            $("#s-slist ul li").click(function () {
+                $("#s-slist").html($(this).html());
+            })
+
+
+
+//            /*自动播放*/
+
+
+
+            $(document).ready(function() {
+                var interval = 2000;	//自动轮播间隔
+//                var s = 1000;			//淡出淡入时间
+                var nowimg = 0;
+                var $imageslistLis = $(".imageslist li");
+                var $circles = $(".hd span");
+                var liAmount = $imageslistLis.length;
+
+                //右按钮
+                $(".rightBtn").click(rightButFunc);
+                //右按钮的业务函数：
+                function rightButFunc() {
+                    if(!$imageslistLis.is(":animated")){
+                        //老的信号量元素淡出
+                        $imageslistLis.eq(nowimg).fadeOut(2000);
+                        //信号量
+                        nowimg++;
+                        if (nowimg > liAmount - 1) {
+                            nowimg = 0;
+                        }
+                        //新的信号量元素淡出
+                        $imageslistLis.eq(nowimg).fadeIn(1000);
+                        //小圆点的cur业务：
+                        changeCircle();
+                    }
+                }
+
+                //左按钮
+                $(".leftBtn").click(function() {
+                    if(!$imageslistLis.is(":animated")){
+                        //老的信号量元素淡出
+                        $imageslistLis.eq(nowimg).fadeOut(2000);
+                        //信号量
+                        nowimg--;
+                        if (nowimg < 0) {
+                            nowimg = liAmount - 1;
+                        }
+                        //新的信号量元素淡出
+                        $imageslistLis.eq(nowimg).fadeIn(1000);
+                        //小圆点的cur业务：
+                        changeCircle();
+                    }
+                });
+
+                //小圆点
+                $circles.click(function(){
+                    if(!$imageslistLis.is(":animated")){
+                        //老的信号量元素淡出
+                        $imageslistLis.eq(nowimg).fadeOut(2000);
+                        //信号量
+                        nowimg = $(this).index();
+                        //新的信号量元素淡出
+                        $imageslistLis.eq(nowimg).fadeIn(1000);
+                        //小圆点的cur业务：
+                        changeCircle();
+                    }
+                });
+
+                function changeCircle() {
+                    $circles.eq(nowimg).addClass("cur").siblings().removeClass("cur");
+                }
+
+                //定时器
+                var timer = setInterval(rightButFunc,interval);
+
+                $(".bd").mouseenter(function(){
+                    clearInterval(timer);
+                });
+
+                $(".bd").mouseleave(function(){
+                    clearInterval(timer);
+                    timer = setInterval(rightButFunc,interval);
+                });
+            });
+
+
+
+
+            //地区显示
+            var oList = document.getElementsByClassName("list");
+            var oBox = document.getElementById("box");
+            var lis = $(".list li");
+            var bis = $("#box li");
+            var show = document.getElementById("shops");
+
+            for(var i=0;i<lis.length;i++){
+                lis[i].index = i+1;
+
+                lis[i].onclick = function () {
+                    for(var j=0;j<lis.length;j++){
+                        lis[j].className = "";
+                    }
+                    this.className = "active";
+                    show.innerHTML = lis[this.index-1].innerHTML;
+                }
+            }
+
+            for(var i=0;i<bis.length;i++){
+                bis[i].index = i+1;
+
+                bis[i].onclick = function () {
+                    for(var j=0;j<bis.length;j++){
+                        bis[j].className = "";
+                    }
+//                    this.className = "active";
+//                    show.innerHTML = bis[this.index-1].innerHTML;
+                }
+            }
+
+
+                var count = 1;
+                $(".ss-slist").click(function () {
+                    $.getJSON("json/shop.json", function (response,status,xhr) {
+                        if (status == "success") {
+                            var arr = response;
+                            for (var i = 0; i < arr.length; i++) {
+                                if (arr[i].page == count) {
+                                    var list = arr[i].list;
+                                    for (var j = 0; j < list.length; j++) {
+                                        var li = $("<li>" + list[j] + "</li>");
+                                        $("#shops").append(li);
+                                    }
+                                    count++;
+                                    break;
+                                }
+                            }
+                        }
+                    })
+                })
+
+
+        })
+
+    </script>
+</head>
+<body>
+<div id="page">
+    <!--右侧logo-->
+    <div class="logo">
+        <a href="#">
+            <img src="images/logo.png">
+        </a>
+    </div>
+    <div id="right-kb">
+    </div>
+    <!--右侧nav-->
+    <div class="navBox">
+        <div class="menuMain">
+            <!--nav-->
+            <ul class="expmenu">
+                <li>
+                    <a href="http://localhost:8080/ajaxtest02/dota/home/home.html">
+                        <span>主页</span>HOME
+                    </a>
+                </li>
+                <li><a href="http://localhost:8080/ajaxtest02/dota/about/about.html"><span>公司简介</span>ABOUT</a></li>
+                <li><a href="http://localhost:8080/ajaxtest02/dota/news/news.html"><span>新闻资讯</span>NEWS</a></li>
+                <li><a href="http://localhost:8080/ajaxtest02/dota/vip/vip.html"><span>VIP会员</span>VIP</a></li>
+                <li><a href="http://localhost:8080/ajaxtest02/dota/shop/shop.html"><span>店铺分布</span>SHOP</a></li>
+                <li><a href="http://localhost:8080/ajaxtest02/dota/message/message.html"><span>在线留言</span>MESSAGE</a></li>
+
+            </ul>
+            <!--中英文-->
+            <div class="m-down">
+                <ul>
+                    <li><a href="#">ENGLISH</a></li>
+                    <li><a href="#">中文</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--主要内容-->
+    <div class="main">
+        <!--店铺内容-->
+        <div id="store">
+            <!--店铺left-->
+            <div class="store-left">
+                <!--上半部选择-->
+                <div id="s-top">
+                    <!--省份-->
+                    <div class="list">
+                        <span>省份</span>
+                        <div id="s-list">
+                            <span>请选择<p>
+                                <img src="images/xiala.png"></p></span>
+                                <div>
+                                <ul style="display: none">
+                                    <li>北京</li>
+                                    <li>广东</li>
+                                    <li>山东</li>
+                                    <li>江西</li>
+                                </ul>
+                                </div>
+                        </div>
+                    </div>
+                    <!--城市-->
+                    <div id="box" class="list">
+                        <span>城市</span>
+                        <div id="s-slist" class="ss-slist">
+                            <span>请选择
+                            <p>
+                                <img src="images/xiala.png">
+                            </p></span>
+                            <div>
+                            <ul style="display: none">
+                                <li>朝阳区</li>
+                                <li>海淀区</li>
+                                <li>通州区</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--下半部显示-->
+                <div class="s-bottom">
+                    <div class="store-b">
+                        <ul id="shops">
+                            <li>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!--店铺right-->
+            <div class="store-right">
+                <!--店铺图片-->
+                <div class="spBox">
+                    <div class="bd">
+                        <ul class="imageslist">
+                            <li class="first"><a href="#"><img src="images/1.jpg"></a></li>
+                            <li><a href="#"><img src="images/2.jpg"></a></li>
+                            <li><a href="#"><img src="images/3.jpg"></a></li>
+                            <li><a href="#"><img src="images/4.jpg"></a></li>
+                        </ul>
+                    </div>
+                    <!--按钮-->
+                    <div class="hd">
+                        <span class="cur">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
